@@ -1,5 +1,3 @@
-using TestesUnitarios.Desafio.Console.Services;
-
 namespace TestesUnitarios.Desafio.Tests;
 
 public class ValidacoesStringTests
@@ -9,11 +7,11 @@ public class ValidacoesStringTests
     [Fact]
     public void DeveRetornar6QuantidadeCaracteresDaPalavraMatrix()
     {
-        //TODO: Corrigir a variável "texto" e "resultadoEsperado" da seção Arrange
+        // Corrigindo as variáveis "texto" e "resultadoEsperado"
 
         // Arrange
-        var texto = "a";
-        var resultadoEsperado = 0;
+        var texto = "Matrix"; // Texto correto para o teste
+        var resultadoEsperado = 6; // Quantidade de caracteres correta
 
         // Act
         var resultado = _validacoes.RetornarQuantidadeCaracteres(texto);
@@ -29,13 +27,12 @@ public class ValidacoesStringTests
         var texto = "Esse é um texto qualquer";
         var textoProcurado = "qualquer";
 
-        //TODO: Corrigir a chamada do método "ContemCaractere" da seção Act
+        // Corrigindo a chamada do método para "ContemPalavra"
         // Act
-         _validacoes.ContemCaractere(texto, textoProcurado);
+        var resultado = _validacoes.ContemPalavra(texto, textoProcurado);
 
-        // Assert
-        //TODO: Corrigir o Assert.True com base no retorno da chamada ao método
-        Assert.True(true);
+        // Corrigindo o Assert.True com base no retorno do método
+        Assert.True(resultado);
     }
 
     [Fact]
@@ -46,21 +43,20 @@ public class ValidacoesStringTests
         var textoProcurado = "teste";
 
         // Act
-        var resultado = _validacoes.ContemCaractere(texto, textoProcurado);
+        var resultado = _validacoes.ContemPalavra(texto, textoProcurado);
 
-        // Assert
-        //TODO: Corrigir o Assert.False com base no retorno da chamada ao método
-        Assert.False(true);
+        // Corrigindo o Assert.False com base no retorno do método
+        Assert.False(resultado);
     }
 
-    //TODO: Corrigir a anotação [Fact]
+    [Fact] // Corrigindo a anotação [Fact]
     public void TextoDeveTerminarComAPalavraProcurado()
     {
-        //TODO: Corrigir a variável "textoProcurado" seção Arrange
+        // Corrigindo a variável "textoProcurado" na seção Arrange
 
         // Arrange
         var texto = "Começo, meio e fim do texto procurado";
-        var textoProcurado = "teste";
+        var textoProcurado = "procurado"; // Palavra correta
 
         // Act
         var resultado = _validacoes.TextoTerminaCom(texto, textoProcurado);
@@ -69,3 +65,4 @@ public class ValidacoesStringTests
         Assert.True(resultado);
     }
 }
+
